@@ -1,0 +1,51 @@
+.CardItem {
+    width: 360px;
+    height: 500px;
+    border: 2px solid black;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.title_card_contain {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title_card_contain button {
+    height: 30px;
+    width: 50px;
+}
+
+.img_contaner_card {
+
+    width: 100%;
+    height: 50%;
+}
+
+.img_contaner_card img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.CardItem .descr_card {
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+
+}
+
+.genre_list {
+    display: flex;
+}
+
+.genre_list li {
+    border: 2px solid black;
+    margin: 0.5rem 0.5rem 0 0;
+}
