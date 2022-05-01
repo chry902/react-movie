@@ -14,8 +14,13 @@ function CardList() {
     return (
         <div className="CardList">
             <div className="CardList__wrapper">
-                {moviesData && moviesData?.map((movie) => (
-                    <CardItem cardData={movie} key={movie.id} />))}
+                {moviesData &&
+                    moviesData.map((movie) => (
+                        <CardItem
+                            cardData={movie}
+                            key={movie.id}
+                        />
+                    ))}
             </div>
         </div>
     );

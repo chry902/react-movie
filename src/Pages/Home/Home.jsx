@@ -1,5 +1,6 @@
 
 import CardList from "../../components/CardList/cardlist";
+import { Categories } from "../categories/Categories";
 /* import { Modal } from "../components/Modal/modal"; */
 import "./style.css";
 
@@ -12,9 +13,9 @@ export function Home() {
                     <label htmlFor="search">Search by title or categories:</label>
                     <input type="text" id="search" name="search" />
                 </div>
+                <Categories />
 
             </div>
-
             <CardList />
         </div>
     );

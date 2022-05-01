@@ -3,8 +3,8 @@ import { POST } from "../../Utils/Http";
 // import { InputCard } from "./inputCard";
 import "./style.css";
 
-export function CreateCardForm() {
-    const [visible, setVisible] = useState(false)
+export function CreateCardForm({ setIsModalVisible }) {
+    // const [visible, setVisible] = useState(false)
 
     const [title, setTitle] = useState("");
     const [year, setYear] = useState("");
@@ -16,9 +16,7 @@ export function CreateCardForm() {
 
     const addNewMovie = (e) => {
         e.preventDefault();
-        console.log("===>", e);
-        const controll = e.targhet.index._wrapperState.controlled;
-        console.log("this controll---->", controll);
+
         POST({
             title,
             year,
@@ -26,22 +24,14 @@ export function CreateCardForm() {
             genres: unStringifyGenres(genres),
             description,
         })
-        // .then(() => window.location.reload(false))
+        setIsModalVisible(true)
     };
-    const timeModale = (event) => {
-        setVisible(true);
-        setTimeout(function () { setVisible(false) }, 3000);
 
-    }
+
 
     return (
         <div className="CreateCardForm">
-            {
-                visible &&
-                <div className="modale_add_post">
-                    <h2>Post creato con successo!</h2>
-                </div>
-            }
+
 
             <form onSubmit={addNewMovie} className="CreateCardForm__form">
                 <label htmlFor="title">Title:</label>
@@ -53,7 +43,7 @@ export function CreateCardForm() {
                     name="title"
                     required
                 />
-                {/* <InputCard  title={title} value={title} usestate={setTitle} id={title} name={title} /> */}
+
                 <label htmlFor="year">Year:</label>
                 <input
                     value={year}
@@ -94,7 +84,7 @@ export function CreateCardForm() {
                     required
                 />
 
-                <input type="submit" value="Send it!" onClick={() => timeModale()} />
+                <input type="submit" value="Send it!" />
             </form>
         </div>
     );

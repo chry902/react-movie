@@ -6,6 +6,7 @@ import "./App.css";
 
 import { Home } from "./Pages/Home/Home";
 import { AddMovie } from "./Pages/AddMovie/AddMovie";
+import { EditMomvie } from "./Pages/EditMovie/editmovie";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           </ul>
         </nav>
         <Routes>
+          <Route path="/edit-movie/:id" element={<EditMomvie />} />
           <Route path="/add-movie" element={<AddMovie />} />
           <Route path="/" element={<Home />} />
         </Routes>

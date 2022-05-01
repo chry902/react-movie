@@ -1,7 +1,10 @@
 const BASE_URL = "https://edgemony-backend.herokuapp.com/movies";
 
 // GET
-const GET = () => fetch(BASE_URL).then((res) => res.json());
+// const GET = () => fetch(BASE_URL).then((res) => res.json());
+
+// GET
+const GET = (id = "") => fetch(`${BASE_URL}/${id}`).then((res) => res.json());
 
 // POST
 const POST = (body) =>

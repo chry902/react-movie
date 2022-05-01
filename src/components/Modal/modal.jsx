@@ -1,10 +1,18 @@
+import { useState } from "react";
 import styles from "./styles.module.scss";
 
-export function Modal() {
+export function Modal({ text, isVisible }) {
+    const [showModal, setShowModal] = useState(isVisible)
 
     return (
-        <div className={styles.Modal}>
-            <p className="{styles.Modal__paragraph">modale</p>
-        </div>
+        <>
+            {
+                isVisible && (
+                    <div className={styles.Modal}>
+                        <p className="{styles.Modal__paragraph">{text}</p>
+                    </div>
+
+                )};
+        </>
     );
 }
