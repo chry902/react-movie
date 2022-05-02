@@ -1,0 +1,14 @@
+.alert {
+    background-color: rgb(88, 177, 0);
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+.visible {
+    display: block;
+}

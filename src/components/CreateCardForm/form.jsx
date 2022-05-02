@@ -1,10 +1,14 @@
 import { useState } from "react";
-import { POST } from "../../Utils/Http";
-// import { InputCard } from "./inputCard";
-import "./style.css";
+import { useLocation, useNavigate } from "react-router-dom";
+import { AddMovie } from "../../Pages/AddMovie/AddMovie";
+import { POST, PUT } from "../../Utils/Http";
 
-export function CreateCardForm({ setIsModalVisible }) {
+// import { InputCard } from "./inputCard";
+import styles from "./styles.module.scss";
+
+export function CreateCardForm({ setIsModalVisible, callType }) {
     // const [visible, setVisible] = useState(false)
+
 
     const [title, setTitle] = useState("");
     const [year, setYear] = useState("");
@@ -14,26 +18,47 @@ export function CreateCardForm({ setIsModalVisible }) {
 
     const unStringifyGenres = (genres) => genres.split(",");
 
+    const location = useLocation();
+    const movieId = location.pathname.split("/").reverse()[0];
+
     const addNewMovie = (e) => {
         e.preventDefault();
 
-        POST({
-            title,
-            year,
-            poster,
-            genres: unStringifyGenres(genres),
-            description,
-        })
-        setIsModalVisible(true)
+        if (callType === "POST") {
+            POST({
+                title,
+                year,
+                poster,
+                genres: unStringifyGenres(genres),
+                description,
+            });
+
+            setIsModalVisible({
+                visible: true,
+                content: "il post è stato publicato",
+
+            });
+
+
+        } else {
+            PUT(movieId, {
+                title,
+                year,
+                poster,
+                genres: unStringifyGenres(genres),
+                description,
+            });
+        }
+
     };
 
 
 
     return (
-        <div className="CreateCardForm">
+        <div className={styles.CreateCardForm}>
 
 
-            <form onSubmit={addNewMovie} className="CreateCardForm__form">
+            <form onSubmit={addNewMovie} className={styles.form}>
                 <label htmlFor="title">Title:</label>
                 <input
                     value={title}
