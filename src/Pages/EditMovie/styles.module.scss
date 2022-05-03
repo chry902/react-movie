@@ -2,9 +2,23 @@
     display: flex;
     width: 100%;
 
-    .CardItem {
+
+    .card_edit_container,
+    .form_edit_container {
         width: 50%;
         height: 100%;
     }
+
+    .card_edit_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .cardItem {
+            height: 100%;
+        }
+    }
+
 
 }

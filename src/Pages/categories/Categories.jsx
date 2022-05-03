@@ -10,7 +10,7 @@ export function Categories() {
 
     return (
         <>
-            <div className={styles.checkbox_contain}>
+            <div className={styles.checkboxContain}>
 
                 <label htmlFor="Avventura">Avventura</label>
                 <input type="checkbox" id="Avventura" value="avventura" name="Avventuras" onChange={(e) => categoryValue()} />

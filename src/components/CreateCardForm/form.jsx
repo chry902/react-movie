@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { AddMovie } from "../../Pages/AddMovie/AddMovie";
+import { useLocation } from "react-router-dom";
+// import { AddMovie } from "../../Pages/AddMovie/AddMovie";
 import { POST, PUT } from "../../Utils/Http";
 
-// import { InputCard } from "./inputCard";
+
 import styles from "./styles.module.scss";
 
-export function CreateCardForm({ setIsModalVisible, callType }) {
-    // const [visible, setVisible] = useState(false)
+export function CreateCardForm({ setEditIsVisible, setIsModalVisible, callType }) {
+
 
 
     const [title, setTitle] = useState("");
@@ -17,7 +17,7 @@ export function CreateCardForm({ setIsModalVisible, callType }) {
     const [description, setDescription] = useState("");
 
     const unStringifyGenres = (genres) => genres.split(",");
-
+    // const navigate = useNavigate();
     const location = useLocation();
     const movieId = location.pathname.split("/").reverse()[0];
 
@@ -32,12 +32,12 @@ export function CreateCardForm({ setIsModalVisible, callType }) {
                 genres: unStringifyGenres(genres),
                 description,
             });
-
             setIsModalVisible({
                 visible: true,
-                content: "il post è stato publicato",
+                content: "il post è stato publicato!",
 
             });
+
 
 
         } else {
@@ -48,6 +48,12 @@ export function CreateCardForm({ setIsModalVisible, callType }) {
                 genres: unStringifyGenres(genres),
                 description,
             });
+            setEditIsVisible({
+                visible: true,
+                content: "Modifica avvenuta con successo!",
+
+            });
+
         }
 
     };

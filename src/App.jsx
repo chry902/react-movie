@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
@@ -11,18 +11,21 @@ import { EditMomvie } from "./Pages/EditMovie/editmovie";
 import { Alert } from "./components/Alert/alert";
 
 function App() {
+  const [alert, setAlert] = useState({});
 
-
-
-  const [alert, setAlert] = useState("");
-
-
-
-  const editSuccess = (componentiNonUtilizati) => {
-    setAlert(componentiNonUtilizati);
-    console.log("--->app.jsx", componentiNonUtilizati)
+  const editSuccess = (value) => {
+    setAlert(value);
+    console.log("--->app.jsx", value);
   };
-  console.log("--->>>app", alert);
+
+
+  const timeCallBack = (() => {
+    setAlert({
+      visible: false,
+      content: "",
+    });
+  });
+
   return (
     <Router>
       <div className="App">
@@ -37,9 +40,9 @@ function App() {
             </li>
           </ul>
         </nav>
-        <Alert alert={alert} />
+        <Alert alert={alert} timeCallBack={timeCallBack} />
         <Routes>
-          <Route path="/edit-movie/:id" element={<EditMomvie />} />
+          <Route path="/edit-movie/:id" element={<EditMomvie editSuccess={editSuccess} />} />
           <Route path="/add-movie" element={<AddMovie editSuccess={editSuccess} />} />
           <Route path="/" element={<Home />} />
         </Routes>

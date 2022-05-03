@@ -1,3 +1,17 @@
-.checkbox {
-    padding: 0;
+.checkboxContain {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkboxContain input {
+    width: 45px;
+    height: 45px;
+}
+
+.checkboxContain label {
+    font-size: 25px;
+    font-weight: 700;
+    padding: 1rem;
 }
