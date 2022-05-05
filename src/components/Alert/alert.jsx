@@ -1,12 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import styles from "./styles.module.scss"
 
 
 export const Alert = ({ alert, timeCallBack }) => {
-    const [add, setAdd] = useState({
-        visible: false,
-        content: "",
-    });
+
 
     useEffect(() => {
         if (visible === true) {
@@ -17,7 +14,7 @@ export const Alert = ({ alert, timeCallBack }) => {
 
 
         };
-        console.log("è partito lo use effect");
+        // eslint-disable-next-line
     }, [alert.visible])
 
 

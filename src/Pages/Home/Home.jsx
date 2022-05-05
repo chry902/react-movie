@@ -5,7 +5,7 @@ import { Categories } from "../categories/Categories";
 
 import styles from "./styles.module.css";
 
-export function Home() {
+function Home() {
     const [searchInput, setSearchInput] = useState("");
 
     const searchItem = (searchValue) => {
@@ -35,4 +35,4 @@ export function Home() {
         </div>
     );
 }
-
+export default Home

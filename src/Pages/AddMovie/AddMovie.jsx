@@ -40,3 +40,4 @@ export function AddMovie(props) {
         </div>
     );
 }
+export default AddMovie

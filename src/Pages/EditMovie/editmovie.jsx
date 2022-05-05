@@ -8,7 +8,7 @@ import { useNavigate, useLocation } from "react-router-dom"
 import CardItem from "../../components/CardItem/carditem";
 import { CreateCardForm } from "../../components/CreateCardForm/form";
 
-export function EditMomvie({ setIsModalVisible, editSuccess }) {
+function EditMomvie({ setIsModalVisible, editSuccess }) {
     const location = useLocation();
 
     const [movieData, setMovieData] = useState({});
@@ -50,3 +50,4 @@ export function EditMomvie({ setIsModalVisible, editSuccess }) {
         </>
     )
 }
+export default EditMomvie
