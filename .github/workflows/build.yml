@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -32,8 +32,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-            BASE_BRANCH: development # The branch the action should deploy from.
-            BRANCH: master # The branch the action should deploy to.
-            FOLDER: build/wwwroot # The folder the action should deploy.
-            SINGLE_COMMIT: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
