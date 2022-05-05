@@ -1,7 +1,6 @@
 {
   "name": "card-movie-react",
   "version": "0.1.0",
-  "homepage": "https://chry902.github.io/react-movie/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -21,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "PUBLIC_URL=https://chry902.github.io/react-movie/ react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
