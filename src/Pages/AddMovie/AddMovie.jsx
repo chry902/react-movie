@@ -17,6 +17,7 @@ export function AddMovie(props) {
 
             navigate("/");
         };
+        // eslint-disable-next-line
     }, [isModalVisible])
 
 
