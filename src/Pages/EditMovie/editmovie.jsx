@@ -22,7 +22,7 @@ function EditMomvie({ setIsModalVisible, editSuccess }) {
         if (editIsVisible.visible === true) {
             navigate("/");
         };
-
+        // eslint-disable-next-line
     }, [editIsVisible]);
 
     function addSuccess(value) {

@@ -9,34 +9,23 @@ export function AddMovie(props) {
 
     const navigate = useNavigate();
 
-
     useEffect(() => {
         addSuccess(isModalVisible);
         if (isModalVisible.visible === true) {
-
-
             navigate("/");
         };
         // eslint-disable-next-line
     }, [isModalVisible])
-
-
-
-
 
     function addSuccess(value) {
         props.editSuccess(value);
 
     }
 
-
-
     return (
         <div className={styles.AddMovie}>
             <h1>ad new movieee</h1>
             <CreateCardForm setIsModalVisible={setIsModalVisible} callType="POST" />
-
-
 
         </div>
     );
