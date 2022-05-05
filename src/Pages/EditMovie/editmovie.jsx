@@ -3,7 +3,6 @@ import styles from "./styles.module.scss"
 import { useState, useEffect } from "react";
 import { GET } from "../../Utils/Http";
 import { useNavigate, useLocation } from "react-router-dom"
-// import { useNavigate } from "react-router-dom";
 
 import CardItem from "../../components/CardItem/carditem";
 import { CreateCardForm } from "../../components/CreateCardForm/form";
@@ -34,7 +33,7 @@ function EditMomvie({ setIsModalVisible, editSuccess }) {
 
     useEffect(() => {
         GET(movieId).then((data) => setMovieData(data));
-        /*  navigate("/"); */
+
     }, [movieId]);
 
     return (
